@@ -6,7 +6,9 @@ const Nav = () => {
             <NavLink to={'/about'} >About</NavLink>
             <NavLink to={'/services'} >Services</NavLink>
             <NavLink to={'/profiles'} >Profiles</NavLink>
+            <NavLink to={'/forms'} >Forms</NavLink>
             <NavLink to={'/contact'} >Contact</NavLink>
+            <button>Change</button>
         </div>
     )
 }

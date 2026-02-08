@@ -1,7 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-// import App from './App.tsx'
 import { createBrowserRouter, RouterProvider } from "react-router";
 import Homepage from './pages/Homepage';
 import AboutPage from './pages/AboutPage';
@@ -11,6 +10,9 @@ import NotFound from './pages/NotFound';
 import Layout from './components/Layout';
 import Profiles from './pages/Profiles';
 import Profile from './pages/Profile';
+import Forms from './pages/Forms';
+import Form1 from './components/Form1';
+import { AppProvider } from './context/AppContext';
 
 
 const router = createBrowserRouter([
@@ -24,15 +26,24 @@ const router = createBrowserRouter([
       { path: 'services', element: <ServicesPage /> },
       { path: 'contact', element: <ContactPage /> },
       { path: 'profiles', element: <Profiles /> },
-      { path: 'profiles/:id', element: <Profile /> }
+      { path: 'profiles/:id', element: <Profile /> },
+      {
+        path: 'forms', element: <Forms />, children: [
+          { path: 'form1', element: <Form1 /> }
+        ]
+      },
     ]
 
   }
 ]);
 
+
+
 createRoot(document.getElementById('root')!).render(
 
   <StrictMode>
-    <RouterProvider router={router} />
+    <AppProvider>
+      <RouterProvider router={router} />
+    </AppProvider>
   </StrictMode>,
 )
