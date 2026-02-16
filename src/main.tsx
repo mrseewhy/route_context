@@ -13,6 +13,7 @@ import Profile from './pages/Profile';
 import Forms from './pages/Forms';
 import Form1 from './components/Form1';
 import { AppProvider } from './context/AppContext';
+import Counter from './pages/Counter';
 
 
 const router = createBrowserRouter([
@@ -26,7 +27,8 @@ const router = createBrowserRouter([
       { path: 'services', element: <ServicesPage /> },
       { path: 'contact', element: <ContactPage /> },
       { path: 'profiles', element: <Profiles /> },
-      { path: 'profiles/:id', element: <Profile /> },
+      { path: 'counter', element: <Counter />, handle: { heading: 'Counter Page Main' } },
+      { path: 'profiles/:id', element: <Profile />, },
       {
         path: 'forms', element: <Forms />, children: [
           { path: 'form1', element: <Form1 /> }

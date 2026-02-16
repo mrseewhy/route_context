@@ -8,6 +8,7 @@ const Nav = () => {
             <NavLink to={'/profiles'} >Profiles</NavLink>
             <NavLink to={'/forms'} >Forms</NavLink>
             <NavLink to={'/contact'} >Contact</NavLink>
+            <NavLink to={'/counter'} >Counter</NavLink>
             <button>Change</button>
         </div>
     )
